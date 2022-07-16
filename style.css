@@ -1,0 +1,98 @@
+@font-face {
+    font-family: abster;
+    src: url(font/abster-webfont.woff) format('woff');
+}
+/* font 참조,구글에서 지원하지 않는 폰트이므로, font-face 웹브라우저에게 서체 이름과 다운받을 위치 알려줌 */
+/* format 형식을 지원하는 경우에만 글꼴을 내려받음,font family 이름설정 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /* 기본적으로 content-box로 되어있음, 원활한 width와height계산을 위해서 바꿈 */
+}
+
+.container{
+    width:100%;
+    height: 100vh;
+    /* 100%는 부모태그의 100%, 100vh는 부모태그와는 관계없이 보이는 부분의 100%, height의 경우 
+       스크롤바를 내리는 부분이 있으므로 vh사용*/
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0,0,0,0.8)),url(images/room.jpg); 
+    /* linear gradeint 부드러운 변화 표시 */
+}
+
+.container .header{
+    width:80%;
+    height: 80px;
+    margin:0 auto;
+    /* 수평기준 항상 중앙, 원래는 right,left 둘다 써야 함 */
+    display:flex;
+    justify-content: space-between;
+    /* flex의 모든 공간을 사용하지 않았을 때 항목 수평기준 분류, 항목들 간에 띄우기 */
+    align-items: center
+    /* flex에서 위치 정렬; */
+}
+/* 하위 클래스인 header의 모든요소 */
+
+.container .header h1 a{
+    text-decoration: none;
+    color: white;
+    font-family: abster;
+}
+
+.container .nav ul li{
+    display: inline-block;
+    margin:0 10px;
+    /* 상하, 좌우/ margin값을 각 방향 마다 설정가능*/
+}
+
+.container .nav ul li a{
+    text-decoration: none;
+    color:white;
+
+}
+
+.container .nav ul li a:hover{
+    color:#1fdfdf;
+}
+
+.container .hero{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container .hero h2{
+    font-size: 60px; 
+    /* fz60 */
+    margin-bottom: 20px;
+    /* mb20 */   
+}
+
+.container .hero p{
+    font-size: 22px;
+}
+
+.container .hero button{
+    background: none;
+    /* 배경 없애기 */
+    border:2px solid darkseagreen;
+    /* <line-width> || <line-style> || <color> */
+    color:white;
+    padding:15px 20px;
+    border-radius: 20px;
+    /* 모서리 반지름 정의*/
+    margin-top: 30px;
+    outline: none;
+    /* border를 감싸는 외곽선*/
+    cursor:pointer;
+    /* 마우스 커서를 갖다댔을떄 모양 지정 */
+    transition:all .4s;
+}
+
+.container .hero button:hover{
+    background-color: darkslategray;
+}
